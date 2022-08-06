@@ -1,0 +1,9 @@
+/code-server-font-patch
+/.vscode
+/blog/__pycache__
+/__pycache__
+blog.db
+/blog/blog.db
+goorm.manifest
+/junk
+/node_modules

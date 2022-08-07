@@ -18,12 +18,24 @@ const RegisterPage = () => {
           ...RegisterValue,
           [name]: value
         });
-      }
+      };
     
-    const Add_acount = () => {
-        axios.post('https://dtakamifastapi.run.goorm.io/user/', {"name": Name, "email": Email, "password": Password})
-        .then((res) => console.log(res))
+      function varifyPassword(Password, Confirm_Password) {
+        if (Password !== Confirm_Password){
+            alert('invaild password')
+        }
+        else{
+            return true;
+        }
     }
+    
+    async function Add_acount() {
+        if (varifyPassword(Password, Confirm_Password)){
+            await axios.post('https://dtakamifastapi.run.goorm.io/user/', {"name": Name, "email": Email, "password": Password})
+        .then((res) => console.log(res))
+        }
+    }
+
     
     return (
         <div class = 'bg-slate-200 h-screen flex'>
@@ -46,7 +58,6 @@ const RegisterPage = () => {
                         <Link to='/login'>로그인</Link>
                     </div>
                 </div>
-
             </div>
         </div>
     );

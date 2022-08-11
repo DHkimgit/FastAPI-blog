@@ -1,7 +1,12 @@
 import React from 'react';
+import { useRecoilValue } from 'recoil';
+import { usersAtom } from '../_state';
+import { userName } from './LoginPage';
 
 const PostListPage = () => { 
-    return <div>포스트 리스트</div>;
+    const username = useRecoilValue(usersAtom);
+
+    return <div>{username}</div>;
  };
 
  export default PostListPage;
